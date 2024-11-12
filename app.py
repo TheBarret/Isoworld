@@ -196,7 +196,7 @@ class Map:
         screen_width, screen_height = Config.SCREEN_WIDTH, Config.SCREEN_HEIGHT
 
         visible_tiles = [tile for tile in self.sorted_tiles if self._is_visible(tile, cam_x, cam_y, screen_width, screen_height)]
-        
+        self._update_hover_state(*pygame.mouse.get_pos())
         for tile in visible_tiles:
             tile.draw(screen, cam_x, cam_y)
     
